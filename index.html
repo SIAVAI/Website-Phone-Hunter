@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phone Hunter</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Style -->
+    <style>
+      * {
+        font-family: "Dancing Script";
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body class="bg-indigo-300 min-h-screen min-w-screen">
+    <header>
+      <h1 class="p-4 font-bold text-4xl text-center md:text-6xl lg:text-6xl">
+        Welcome to my Phone Hunter!
+      </h1>
+    </header>
+
+    <main class="container mx-auto mt-8">
+      <!-- Search Result -->
+      <section
+        class="p-4 font-bold gap-4 text-4xl text-center md:text-6xl lg:text-6xl"
+      >
+        <input
+          id="search-field"
+          type="text"
+          placeholder="Search...."
+          class="input input-bordered input-secondary h-12 w-full max-w-xs"
+        />
+
+        <button onclick="handleSearch()" class="btn btn-active btn-primary">
+          Search
+        </button>
+
+        <!-- Another Search -->
+
+        <!-- <input id="search-field2" type="text" placeholder="Search...." class="input input-bordered input-secondary h-12 w-full max-w-xs" />
+
+            <button onclick="handleSearch2()" class="btn btn-active btn-primary">Search</button> -->
+      </section>
+
+      <!-- Loader -->
+      <section
+        id="loading-spinner"
+        class="flex justify-center items center m-8 hidden"
+      >
+        <span class="loading loading-dots loading-lg"></span>
+      </section>
+
+      <!-- Search Result -->
+      <section>
+        <div
+          id="phone-container"
+          class="justify-center items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+        ></div>
+      </section>
+
+      <!-- Show All -->
+      <section
+        id="show-all"
+        class="flex justify-center items-center m-10 px-10 hidden"
+      >
+        <button
+          onclick="handleShowAll()"
+          class="btn btn-wide bg-violet-200 border-none"
+        >
+          Show All
+        </button>
+      </section>
+
+      <!-- Modal -->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn bg-red-100" onclick="show_details_modal.showModal()">open modal</button> -->
+        <dialog id="show_details_modal" class="modal bg-blue-100">
+          <div class="modal-box bg-violet-200">
+
+            <div id="modal-img" class="flex justify-center items-center">
+            </div>
+
+            <h2 id="modal-phone-name" class="font-bold text-lg text-center">Hello!</h3>
+
+            <div id="show-detail-container">
+            </div>
+
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+    <script src="js/summary.js"></script>
+    <script src="error.js"></script>
+  </body>
+</html>
